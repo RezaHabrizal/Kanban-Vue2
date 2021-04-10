@@ -40,22 +40,6 @@
             :state="allState"
             required
           ></b-form-input>
-          priority : medium
-          <b-form-radio
-            type="radio"
-            name="priority"
-            v-model="priority"
-            :state="allState"
-            required
-          ></b-form-radio>
-          priority : high
-          <b-form-radio
-            type="radio"
-            name="priority"
-            v-model="priority"
-            :state="allState"
-            required
-          ></b-form-radio>
           category
           <b-form-select
             v-model="category"
@@ -75,7 +59,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "../API/BaseURL";
 export default {
   props: ['done'],
   data() {
@@ -109,7 +93,7 @@ export default {
       bvModalEvt.preventDefault();
       axios({
         method: "POST",
-        url: "http://localhost:3000/tasks",
+        url: "/tasks",
         data: {
           title: this.title,
           description: this.description,
@@ -122,7 +106,6 @@ export default {
         },
       })
         .then(({ data }) => {
-          console.log(data);
           this.$emit("emitCreatedTask");
         })
         .catch((err) => {

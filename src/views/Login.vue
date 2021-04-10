@@ -1,9 +1,9 @@
 <template>
   <section id="login-page">
-    <div class="container d-flex flex-direction-row" style="height: 100vh;">
+    <div class="container d-flex justify-content-center flex-column" style="height: 100vh;">
       <div>
-        <form style="width: 300px;" @submit.prevent="login">
-          <div><h3 style="color: blue;">LOGIN</h3></div>
+        <form class="container justify-content-sm-center" style="width: 300px;" @submit.prevent="login">
+          <div class="container text-center"><h3 style="color: blue;">LOGIN</h3></div>
           <label for=""><h6 style="color: green;">Email</h6></label>
           <input type="email" v-model="email_login" class="form-control" />
           <label for=""><h6 style="color: green;">Password</h6></label>
@@ -21,18 +21,18 @@
           </div>
           <div class="row" style="padding-top: 1rem;">
             <div class="container d-flex">
-              <button type="submit" class="btn btn-success btn-lg btn-block">
+              <button @click.prevent="getRegisterPage" type="button" class="btn btn-success btn-lg btn-block">
                 Register
               </button>
             </div>
           </div>
         </form>
-        <div class="container">
-          <p style="width: 300px;">
-            ------------------------------------------
-          </p>
+        <div class="container d-flex justify-content-sm-center" style="padding: 1rem">
+          <h6>
+            sign with google
+          </h6>
         </div>
-        <div class="container d-flex align-items-center">
+        <div class="container d-flex justify-content-sm-center">
           <GoogleLogin
             @click.prevent="login"
             :params="params"
@@ -46,12 +46,14 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "../API/BaseURL";
 import GoogleLogin from "vue-google-login";
+import Register from "./Register"
 
 export default {
   components: {
     GoogleLogin,
+    Register
   },
   data() {
     return {
@@ -69,13 +71,14 @@ export default {
         height: 50,
         longtitle: true,
       },
+      doRegister: false
     };
   },
   methods: {
     login() {
       axios({
         method: "POST",
-        url: "http://localhost:3000/login",
+        url: "/login",
         data: {
           email: this.email_login,
           password: this.password_login,
@@ -100,7 +103,7 @@ export default {
 
       axios({
         method: "POST",
-        url: "http://localhost:3000/googlelogin",
+        url: "/googlelogin",
         data: {
           googleToken: id_token,
         },
@@ -109,6 +112,9 @@ export default {
         this.$emit("emitHasToken", true);
       });
     },
+    getRegisterPage() {
+      this.$emit('emitGetRegister')
+    }
   }
 };
 </script>

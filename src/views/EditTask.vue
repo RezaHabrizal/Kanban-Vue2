@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="d-flex justify-content-center flex-direction:column align-items-center" style="height: 800px;">
     <b-form @submit.prevent="$emit('getEdit')">
         <b-form-group
         id="input-group-1"
@@ -27,16 +27,6 @@
             id="due_date-input"
             required
           ></b-form-input>
-          priority
-          <b-form-select
-            v-model="editValue.priority"
-            class="form-select"
-            aria-label="Default select example"
-          >
-            <option selected>Open this select menu</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </b-form-select>
           category
           <b-form-select
             v-model="editValue.category"

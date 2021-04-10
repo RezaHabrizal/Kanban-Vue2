@@ -2,10 +2,20 @@
 <div>
   <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{ backlog.title }}</h5>
-      <p class="card-text">
+      <label for="">Title</label><h5 class="card-title">{{ backlog.title }}</h5>
+      <label for="">Description</label>
+      <h6 class="card-text">
         {{backlog.description}}
-      </p>
+      </h6>
+       <label for="">Due Date</label>
+      <h6 class="card-text">
+        {{backlog.dueDate}}
+      </h6>
+      <label for="">author</label>
+      <h6 class="card-text">
+        {{backlog.User.name}}
+      </h6>
+      
       <button type="button" class="btn btn-outline-info" @click.prevent="goEdit(backlog.id)">Edit</button>
       <button type="button" class="btn btn-outline-danger" @click.prevent="goDelete(backlog.id)">Delete</button>
     </div>

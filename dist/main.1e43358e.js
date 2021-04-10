@@ -10342,7 +10342,22 @@ module.exports.default = axios;
 
 },{"./utils":"node_modules/axios/lib/utils.js","./helpers/bind":"node_modules/axios/lib/helpers/bind.js","./core/Axios":"node_modules/axios/lib/core/Axios.js","./core/mergeConfig":"node_modules/axios/lib/core/mergeConfig.js","./defaults":"node_modules/axios/lib/defaults.js","./cancel/Cancel":"node_modules/axios/lib/cancel/Cancel.js","./cancel/CancelToken":"node_modules/axios/lib/cancel/CancelToken.js","./cancel/isCancel":"node_modules/axios/lib/cancel/isCancel.js","./helpers/spread":"node_modules/axios/lib/helpers/spread.js","./helpers/isAxiosError":"node_modules/axios/lib/helpers/isAxiosError.js"}],"node_modules/axios/index.js":[function(require,module,exports) {
 module.exports = require('./lib/axios');
-},{"./lib/axios":"node_modules/axios/lib/axios.js"}],"node_modules/vue-google-login/dist/vue-google-login.min.js":[function(require,module,exports) {
+},{"./lib/axios":"node_modules/axios/lib/axios.js"}],"src/API/BaseURL.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var axios = require("axios");
+
+var _default = axios.create({
+  baseURL: "https://kanban-rz.herokuapp.com"
+});
+
+exports.default = _default;
+},{"axios":"node_modules/axios/index.js"}],"node_modules/vue-google-login/dist/vue-google-login.min.js":[function(require,module,exports) {
 var define;
 !function(t,e){"object"==typeof exports&&"undefined"!=typeof module?e(exports):"function"==typeof define&&define.amd?define(["exports"],e):e((t=t||self)["vue-google-login"]={})}(this,(function(t){"use strict";var e,n,i=function(t){return e?Promise.resolve(e):(n||(n=function(t){return new Promise((function(n,i){window.onGapiLoad=function(){window.gapi.load("auth2",(function(){try{e=window.gapi.auth2.init(Object.assign({},t))}catch(t){i({err:"client_id missing or is incorrect, or if you added extra params maybe they are written incorrectly, did you add it to the component or plugin?"})}n(e)}))}}))}(t)),n)},o=function(t,e){if(t)return t[e]();return Promise.reject({err:"Script not loaded correctly, did you added the plugin or the client_id to the component?"})},r={load:function(t){return Promise.all([i(t),new Promise((function(t,e){if(!document.getElementById("auth2_script_id")){var n=document.createElement("script");n.setAttribute("src","https://apis.google.com/js/platform.js?onload=onGapiLoad"),n.setAttribute("async",!0),n.setAttribute("defer","defer"),n.setAttribute("id","auth2_script_id"),document.head.appendChild(n)}t()}))]).then((function(t){return t[0]}))},signIn:function(){return o(e,"signIn")},signOut:function(){return o(e,"signOut")},isSignedIn:function(){return o(e.isSignedIn,"get")},currentUser:function(){return o(e.currentUser,"get")},grantOfflineAccess:function(){return o(e,"grantOfflineAccess")}},s=0;var u=function(t,e,n,i,o,r,s,u,c,d){"boolean"!=typeof s&&(c=u,u=s,s=!1);var a,l="function"==typeof n?n.options:n;if(t&&t.render&&(l.render=t.render,l.staticRenderFns=t.staticRenderFns,l._compiled=!0,o&&(l.functional=!0)),i&&(l._scopeId=i),r?(a=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),e&&e.call(this,c(t)),t&&t._registeredComponents&&t._registeredComponents.add(r)},l._ssrRegister=a):e&&(a=s?function(){e.call(this,d(this.$root.$options.shadowRoot))}:function(t){e.call(this,u(t))}),a)if(l.functional){var f=l.render;l.render=function(t,e){return a.call(e),f(t,e)}}else{var h=l.beforeCreate;l.beforeCreate=h?[].concat(h,a):[a]}return n}({render:function(){var t=this.$createElement,e=this._self._c||t;return this.renderParams&&!this.logoutButton?e("div",{attrs:{id:this.id},on:{click:this.handleClick}}):e("button",{attrs:{id:this.id},on:{click:this.handleClick}},[this._t("default")],2)},staticRenderFns:[]},void 0,{name:"GoogleLogin",props:{params:{type:Object,required:!0},onCurrentUser:{type:Function,default:function(){}},onSuccess:{type:Function,default:function(){}},onFailure:{type:Function,default:function(){}},logoutButton:{type:Boolean,default:!1},renderParams:{type:Object,required:!1}},beforeCreate:function(){this.id="google-signin-btn-".concat(s++)},methods:{handleClick:function(){var t=this,e=this.logoutButton?"signOut":"signIn";r[e]().then((function(e){return t.onSuccess(e)})).catch((function(e){return t.onFailure(e)}))}},mounted:function(){var t=this;r.load(this.params).then((function(){t.renderParams&&!1===t.logoutButton&&window.gapi.signin2.render(t.id,t.renderParams),r.isSignedIn()&&t.onCurrentUser(r.currentUser())})).catch((function(t){console.log(t)}))}},void 0,!1,void 0,void 0,void 0),c={install:function(t,e){t.GoogleAuth=r.load(e)}};t.GoogleLogin=u,t.LoaderPlugin=c,t.default=u,Object.defineProperty(t,"__esModule",{value:!0})}));
 
@@ -10689,7 +10704,263 @@ function patchScopedSlots (instance) {
   }
 }
 
-},{}],"src/views/Login.vue":[function(require,module,exports) {
+},{}],"src/views/Register.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  data: function data() {
+    return {
+      form: {
+        email: "",
+        name: "",
+        password: ""
+      },
+      show: true
+    };
+  },
+  methods: {
+    doRegister: function doRegister() {
+      this.$emit("emitDoRegister", this.form);
+    },
+    onReset: function onReset(event) {
+      var _this = this;
+
+      event.preventDefault(); // Reset our form values
+
+      this.form.email = "";
+      this.form.name = ""; // Trick to reset/clear native browser form validation state
+
+      this.show = false;
+      this.$nextTick(function () {
+        _this.show = true;
+      });
+    }
+  }
+};
+exports.default = _default;
+        var $b5573f = exports.default || module.exports;
+      
+      if (typeof $b5573f === 'function') {
+        $b5573f = $b5573f.options;
+      }
+    
+        /* template */
+        Object.assign($b5573f, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass:
+        "d-flex justify-content-center flex-direction:column align-items-center",
+      staticStyle: { height: "600px" }
+    },
+    [
+      _vm.show
+        ? _c(
+            "b-form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.doRegister($event)
+                },
+                reset: _vm.onReset
+              }
+            },
+            [
+              _c(
+                "b-form-group",
+                {
+                  attrs: {
+                    id: "input-group-1",
+                    label: "Email address:",
+                    "label-for": "input-1",
+                    description:
+                      "We'll never share your email with anyone else."
+                  }
+                },
+                [
+                  _c("b-form-input", {
+                    attrs: {
+                      id: "input-1",
+                      type: "email",
+                      placeholder: "Enter email",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.form.email,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "email", $$v)
+                      },
+                      expression: "form.email"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "b-form-group",
+                {
+                  attrs: {
+                    id: "input-group-2",
+                    label: "Your Name:",
+                    "label-for": "input-2"
+                  }
+                },
+                [
+                  _c("b-form-input", {
+                    attrs: {
+                      id: "input-2",
+                      placeholder: "Enter name",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.form.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "name", $$v)
+                      },
+                      expression: "form.name"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "b-form-group",
+                {
+                  attrs: {
+                    id: "input-group-6",
+                    label: "Your Password:",
+                    "label-for": "input-6"
+                  }
+                },
+                [
+                  _c("b-form-input", {
+                    attrs: {
+                      type: "password",
+                      id: "input-6",
+                      placeholder: "Enter password",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.form.password,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "password", $$v)
+                      },
+                      expression: "form.password"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "b-button",
+                { attrs: { type: "submit", variant: "primary" } },
+                [_vm._v("Submit")]
+              ),
+              _vm._v(" "),
+              _c("b-button", { attrs: { type: "reset", variant: "danger" } }, [
+                _vm._v("Reset")
+              ])
+            ],
+            1
+          )
+        : _vm._e()
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$b5573f', $b5573f);
+          } else {
+            api.reload('$b5573f', $b5573f);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"../../Users/ThinkPad X230/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/views/Login.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10697,9 +10968,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _axios = _interopRequireDefault(require("axios"));
+var _BaseURL = _interopRequireDefault(require("../API/BaseURL"));
 
 var _vueGoogleLogin = _interopRequireDefault(require("vue-google-login"));
+
+var _Register = _interopRequireDefault(require("./Register"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10752,7 +11025,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 var _default = {
   components: {
-    GoogleLogin: _vueGoogleLogin.default
+    GoogleLogin: _vueGoogleLogin.default,
+    Register: _Register.default
   },
   data: function data() {
     return {
@@ -10768,16 +11042,17 @@ var _default = {
         width: 250,
         height: 50,
         longtitle: true
-      }
+      },
+      doRegister: false
     };
   },
   methods: {
     login: function login() {
       var _this = this;
 
-      (0, _axios.default)({
+      (0, _BaseURL.default)({
         method: "POST",
-        url: "http://localhost:3000/login",
+        url: "/login",
         data: {
           email: this.email_login,
           password: this.password_login
@@ -10799,9 +11074,9 @@ var _default = {
       var id_token = googleUser.getAuthResponse().id_token; // This only gets the user information: id, name, imageUrl and email
 
       console.log(googleUser.getBasicProfile());
-      (0, _axios.default)({
+      (0, _BaseURL.default)({
         method: "POST",
-        url: "http://localhost:3000/googlelogin",
+        url: "/googlelogin",
         data: {
           googleToken: id_token
         }
@@ -10810,6 +11085,9 @@ var _default = {
 
         _this2.$emit("emitHasToken", true);
       });
+    },
+    getRegisterPage: function getRegisterPage() {
+      this.$emit('emitGetRegister');
     }
   }
 };
@@ -10830,7 +11108,7 @@ exports.default = _default;
     _c(
       "div",
       {
-        staticClass: "container d-flex flex-direction-row",
+        staticClass: "container d-flex justify-content-center flex-column",
         staticStyle: { height: "100vh" }
       },
       [
@@ -10838,6 +11116,7 @@ exports.default = _default;
           _c(
             "form",
             {
+              staticClass: "container justify-content-sm-center",
               staticStyle: { width: "300px" },
               on: {
                 submit: function($event) {
@@ -10899,15 +11178,36 @@ exports.default = _default;
               _vm._v(" "),
               _vm._m(3),
               _vm._v(" "),
-              _vm._m(4)
+              _c(
+                "div",
+                { staticClass: "row", staticStyle: { "padding-top": "1rem" } },
+                [
+                  _c("div", { staticClass: "container d-flex" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success btn-lg btn-block",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.getRegisterPage($event)
+                          }
+                        }
+                      },
+                      [_vm._v("\n              Register\n            ")]
+                    )
+                  ])
+                ]
+              )
             ]
           ),
           _vm._v(" "),
-          _vm._m(5),
+          _vm._m(4),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "container d-flex align-items-center" },
+            { staticClass: "container d-flex justify-content-sm-center" },
             [
               _c("GoogleLogin", {
                 attrs: {
@@ -10935,7 +11235,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
+    return _c("div", { staticClass: "container text-center" }, [
       _c("h3", { staticStyle: { color: "blue" } }, [_vm._v("LOGIN")])
     ])
   },
@@ -10982,32 +11282,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "row", staticStyle: { "padding-top": "1rem" } },
-      [
-        _c("div", { staticClass: "container d-flex" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-success btn-lg btn-block",
-              attrs: { type: "submit" }
-            },
-            [_vm._v("\n              Register\n            ")]
-          )
-        ])
-      ]
+      {
+        staticClass: "container d-flex justify-content-sm-center",
+        staticStyle: { padding: "1rem" }
+      },
+      [_c("h6", [_vm._v("\n          sign with google\n        ")])]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("p", { staticStyle: { width: "300px" } }, [
-        _vm._v(
-          "\n          ------------------------------------------\n        "
-        )
-      ])
-    ])
   }
 ]
 render._withStripped = true
@@ -11042,13 +11322,23 @@ render._withStripped = true
       
       }
     })();
-},{"axios":"node_modules/axios/index.js","vue-google-login":"node_modules/vue-google-login/dist/vue-google-login.min.js","_css_loader":"../../Users/ThinkPad X230/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/components/Backlog.vue":[function(require,module,exports) {
+},{"../API/BaseURL":"src/API/BaseURL.js","vue-google-login":"node_modules/vue-google-login/dist/vue-google-login.min.js","./Register":"src/views/Register.vue","_css_loader":"../../Users/ThinkPad X230/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/components/Backlog.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -11093,14 +11383,29 @@ exports.default = _default;
   return _c("div", [
     _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
       _c("div", { staticClass: "card-body" }, [
+        _c("label", { attrs: { for: "" } }, [_vm._v("Title")]),
         _c("h5", { staticClass: "card-title" }, [
           _vm._v(_vm._s(_vm.backlog.title))
         ]),
         _vm._v(" "),
-        _c("p", { staticClass: "card-text" }, [
+        _c("label", { attrs: { for: "" } }, [_vm._v("Description")]),
+        _vm._v(" "),
+        _c("h6", { staticClass: "card-text" }, [
           _vm._v(
             "\r\n        " + _vm._s(_vm.backlog.description) + "\r\n      "
           )
+        ]),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "" } }, [_vm._v("Due Date")]),
+        _vm._v(" "),
+        _c("h6", { staticClass: "card-text" }, [
+          _vm._v("\r\n        " + _vm._s(_vm.backlog.dueDate) + "\r\n      ")
+        ]),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "" } }, [_vm._v("author")]),
+        _vm._v(" "),
+        _c("h6", { staticClass: "card-text" }, [
+          _vm._v("\r\n        " + _vm._s(_vm.backlog.User.name) + "\r\n      ")
         ]),
         _vm._v(" "),
         _c(
@@ -11189,14 +11494,36 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   props: ["doing"],
   methods: {
     goEdit: function goEdit(id) {
-      this.$emit('emitGetEdit', id);
+      this.$emit("emitGetEdit", id);
     },
     goDelete: function goDelete(id) {
-      this.$emit('emitGoDelete', id);
+      this.$emit("emitGoDelete", id);
     }
   }
 };
@@ -11215,12 +11542,28 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
     _c("div", { staticClass: "card-body" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Title")]),
+      _vm._v(" "),
       _c("h5", { staticClass: "card-title" }, [
         _vm._v(_vm._s(_vm.doing.title))
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "card-text" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Description")]),
+      _vm._v(" "),
+      _c("h6", { staticClass: "card-text" }, [
         _vm._v("\n      " + _vm._s(_vm.doing.description) + "\n    ")
+      ]),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "" } }, [_vm._v("Due Date")]),
+      _vm._v(" "),
+      _c("h6", { staticClass: "card-text" }, [
+        _vm._v("\n      " + _vm._s(_vm.doing.dueDate) + "\n    ")
+      ]),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "" } }, [_vm._v("author")]),
+      _vm._v(" "),
+      _c("h6", { staticClass: "card-text" }, [
+        _vm._v("\n      " + _vm._s(_vm.doing.User.name) + "\n    ")
       ]),
       _vm._v(" "),
       _c(
@@ -11235,7 +11578,7 @@ exports.default = _default;
             }
           }
         },
-        [_vm._v("Edit")]
+        [_vm._v("\n      Edit\n    ")]
       ),
       _vm._v(" "),
       _c(
@@ -11250,7 +11593,7 @@ exports.default = _default;
             }
           }
         },
-        [_vm._v("Delete")]
+        [_vm._v("\n      Delete\n    ")]
       )
     ])
   ])
@@ -11308,14 +11651,36 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   props: ["done"],
   methods: {
     goEdit: function goEdit(id) {
-      this.$emit('emitGetEdit', id);
+      this.$emit("emitGetEdit", id);
     },
     goDelete: function goDelete(id) {
-      this.$emit('emitGoDelete', id);
+      this.$emit("emitGoDelete", id);
     }
   }
 };
@@ -11334,10 +11699,26 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
     _c("div", { staticClass: "card-body" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Title")]),
+      _vm._v(" "),
       _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.done.title))]),
       _vm._v(" "),
-      _c("p", { staticClass: "card-text" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Description")]),
+      _vm._v(" "),
+      _c("h6", { staticClass: "card-text" }, [
         _vm._v("\n      " + _vm._s(_vm.done.description) + "\n    ")
+      ]),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "" } }, [_vm._v("Due Date")]),
+      _vm._v(" "),
+      _c("h6", { staticClass: "card-text" }, [
+        _vm._v("\n      " + _vm._s(_vm.done.dueDate) + "\n    ")
+      ]),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "" } }, [_vm._v("author")]),
+      _vm._v(" "),
+      _c("h6", { staticClass: "card-text" }, [
+        _vm._v("\n      " + _vm._s(_vm.done.User.name) + "\n    ")
       ]),
       _vm._v(" "),
       _c(
@@ -11352,7 +11733,7 @@ exports.default = _default;
             }
           }
         },
-        [_vm._v("Edit")]
+        [_vm._v("\n      Edit\n    ")]
       ),
       _vm._v(" "),
       _c(
@@ -11367,7 +11748,7 @@ exports.default = _default;
             }
           }
         },
-        [_vm._v("Delete")]
+        [_vm._v("\n      Delete\n    ")]
       )
     ])
   ])
@@ -11425,14 +11806,36 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   props: ["todo"],
   methods: {
     goEdit: function goEdit(id) {
-      this.$emit('emitGetEdit', id);
+      this.$emit("emitGetEdit", id);
     },
     goDelete: function goDelete(id) {
-      this.$emit('emitGoDelete', id);
+      this.$emit("emitGoDelete", id);
     }
   }
 };
@@ -11451,10 +11854,26 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
     _c("div", { staticClass: "card-body" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Title")]),
+      _vm._v(" "),
       _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.todo.title))]),
       _vm._v(" "),
-      _c("p", { staticClass: "card-text" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Description")]),
+      _vm._v(" "),
+      _c("h6", { staticClass: "card-text" }, [
         _vm._v("\n      " + _vm._s(_vm.todo.description) + "\n    ")
+      ]),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "" } }, [_vm._v("Due Date")]),
+      _vm._v(" "),
+      _c("h6", { staticClass: "card-text" }, [
+        _vm._v("\n      " + _vm._s(_vm.todo.dueDate) + "\n    ")
+      ]),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "" } }, [_vm._v("author")]),
+      _vm._v(" "),
+      _c("h6", { staticClass: "card-text" }, [
+        _vm._v("\n      " + _vm._s(_vm.todo.User.name) + "\n    ")
       ]),
       _vm._v(" "),
       _c(
@@ -11469,7 +11888,7 @@ exports.default = _default;
             }
           }
         },
-        [_vm._v("Edit")]
+        [_vm._v("\n      Edit\n    ")]
       ),
       _vm._v(" "),
       _c(
@@ -11484,7 +11903,7 @@ exports.default = _default;
             }
           }
         },
-        [_vm._v("Delete")]
+        [_vm._v("\n      Delete\n    ")]
       )
     ])
   ])
@@ -11530,26 +11949,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _axios = _interopRequireDefault(require("axios"));
+var _BaseURL = _interopRequireDefault(require("../API/BaseURL"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -11643,9 +12046,9 @@ var _default = {
 
       // Prevent modal from closing
       bvModalEvt.preventDefault();
-      (0, _axios.default)({
+      (0, _BaseURL.default)({
         method: "POST",
-        url: "http://localhost:3000/tasks",
+        url: "/tasks",
         data: {
           title: this.title,
           description: this.description,
@@ -11658,7 +12061,6 @@ var _default = {
         }
       }).then(function (_ref) {
         var data = _ref.data;
-        console.log(data);
 
         _this.$emit("emitCreatedTask");
       }).catch(function (err) {
@@ -11779,38 +12181,6 @@ exports.default = _default;
                       expression: "due_date"
                     }
                   }),
-                  _vm._v("\n        priority : medium\n        "),
-                  _c("b-form-radio", {
-                    attrs: {
-                      type: "radio",
-                      name: "priority",
-                      state: _vm.allState,
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.priority,
-                      callback: function($$v) {
-                        _vm.priority = $$v
-                      },
-                      expression: "priority"
-                    }
-                  }),
-                  _vm._v("\n        priority : high\n        "),
-                  _c("b-form-radio", {
-                    attrs: {
-                      type: "radio",
-                      name: "priority",
-                      state: _vm.allState,
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.priority,
-                      callback: function($$v) {
-                        _vm.priority = $$v
-                      },
-                      expression: "priority"
-                    }
-                  }),
                   _vm._v("\n        category\n        "),
                   _c(
                     "b-form-select",
@@ -11892,7 +12262,7 @@ render._withStripped = true
       
       }
     })();
-},{"axios":"node_modules/axios/index.js","_css_loader":"../../Users/ThinkPad X230/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"node_modules/vue-functional-data-merge/dist/lib.esm.js":[function(require,module,exports) {
+},{"../API/BaseURL":"src/API/BaseURL.js","_css_loader":"../../Users/ThinkPad X230/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"node_modules/vue-functional-data-merge/dist/lib.esm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -63737,7 +64107,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _axios = _interopRequireDefault(require("axios"));
+var _BaseURL = _interopRequireDefault(require("../API/BaseURL"));
 
 var _Backlog = _interopRequireDefault(require("../components/Backlog"));
 
@@ -63753,11 +64123,6 @@ var _bootstrapVue = require("bootstrap-vue");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
 //
 //
 //
@@ -63876,9 +64241,9 @@ var _default = {
     fetchTasks: function fetchTasks() {
       var _this = this;
 
-      (0, _axios.default)({
+      (0, _BaseURL.default)({
         method: "GET",
-        url: "http://localhost:3000/tasks",
+        url: "/tasks",
         headers: {
           access_token: localStorage.access_token
         }
@@ -63888,6 +64253,8 @@ var _default = {
         _this.doings = [];
         _this.dones = [];
         response.data.tasks.forEach(function (e) {
+          e.dueDate = new Date(e.dueDate).toDateString();
+
           switch (e.category) {
             case "backlog":
               _this.backlogs.push(e);
@@ -63909,7 +64276,7 @@ var _default = {
 
           }
 
-          _this.$emit('emitHasToken', true);
+          _this.$emit("emitHasToken", true);
         });
       }).catch(function (err) {
         console.log(err);
@@ -63918,17 +64285,17 @@ var _default = {
     getEditPage: function getEditPage(id) {
       var _this2 = this;
 
-      console.log("GET EDIT PAGE");
-      (0, _axios.default)({
-        method: 'GET',
-        url: "http://localhost:3000/tasks/".concat(id),
+      (0, _BaseURL.default)({
+        method: "GET",
+        url: "/tasks/".concat(id),
         headers: {
           access_token: localStorage.access_token
         }
       }).then(function (_ref) {
         var data = _ref.data;
+        data.dueDate = new Date(data.dueDate).toISOString().split('T')[0];
 
-        _this2.$emit('emitChangePage', data);
+        _this2.$emit("emitChangePage", data);
       }).catch(function (err) {
         console.log(err);
       });
@@ -63936,9 +64303,9 @@ var _default = {
     goDelete: function goDelete(id) {
       var _this3 = this;
 
-      (0, _axios.default)({
-        method: 'DELETE',
-        url: "http://localhost:3000/tasks/".concat(id),
+      (0, _BaseURL.default)({
+        method: "DELETE",
+        url: "/tasks/".concat(id),
         headers: {
           access_token: localStorage.access_token
         }
@@ -63949,6 +64316,9 @@ var _default = {
       }).catch(function (err) {
         console.log(err);
       });
+    },
+    doLogOut: function doLogOut() {
+      this.$emit('emitDoLogout');
     }
   },
   created: function created() {
@@ -63978,104 +64348,26 @@ exports.default = _default;
             { attrs: { toggleable: "lg", type: "dark", variant: "info" } },
             [
               _c("b-navbar-brand", { attrs: { href: "#" } }, [
-                _vm._v("NavBar")
+                _vm._v("Kanban Gan")
               ]),
               _vm._v(" "),
-              _c("b-navbar-toggle", { attrs: { target: "nav-collapse" } }),
-              _vm._v(" "),
               _c(
-                "b-collapse",
-                { attrs: { id: "nav-collapse", "is-nav": "" } },
+                "b-navbar-nav",
+                { staticClass: "ml-auto" },
                 [
                   _c(
-                    "b-navbar-nav",
-                    [
-                      _c("b-nav-item", { attrs: { href: "#" } }, [
-                        _vm._v("Link")
-                      ]),
-                      _vm._v(" "),
-                      _c("b-nav-item", { attrs: { href: "#", disabled: "" } }, [
-                        _vm._v("Disabled")
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-navbar-nav",
-                    { staticClass: "ml-auto" },
-                    [
-                      _c(
-                        "b-nav-form",
-                        [
-                          _c("b-form-input", {
-                            staticClass: "mr-sm-2",
-                            attrs: { size: "sm", placeholder: "Search" }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "b-button",
-                            {
-                              staticClass: "my-2 my-sm-0",
-                              attrs: { size: "sm", type: "submit" }
-                            },
-                            [_vm._v("Search")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-nav-item-dropdown",
-                        { attrs: { text: "Lang", right: "" } },
-                        [
-                          _c("b-dropdown-item", { attrs: { href: "#" } }, [
-                            _vm._v("EN")
-                          ]),
-                          _vm._v(" "),
-                          _c("b-dropdown-item", { attrs: { href: "#" } }, [
-                            _vm._v("ES")
-                          ]),
-                          _vm._v(" "),
-                          _c("b-dropdown-item", { attrs: { href: "#" } }, [
-                            _vm._v("RU")
-                          ]),
-                          _vm._v(" "),
-                          _c("b-dropdown-item", { attrs: { href: "#" } }, [
-                            _vm._v("FA")
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-nav-item-dropdown",
-                        {
-                          attrs: { right: "" },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "button-content",
-                              fn: function() {
-                                return [_c("em", [_vm._v("User")])]
-                              },
-                              proxy: true
-                            }
-                          ])
-                        },
-                        [
-                          _vm._v(" "),
-                          _c("b-dropdown-item", { attrs: { href: "#" } }, [
-                            _vm._v("Profile")
-                          ]),
-                          _vm._v(" "),
-                          _c("b-dropdown-item", { attrs: { href: "#" } }, [
-                            _vm._v("Sign Out")
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
+                    "b-button",
+                    {
+                      staticClass: "my-2 my-sm-0",
+                      attrs: { size: "sm", type: "button" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.doLogOut($event)
+                        }
+                      }
+                    },
+                    [_vm._v("LOGOUT")]
                   )
                 ],
                 1
@@ -64087,95 +64379,182 @@ exports.default = _default;
         1
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "container d-flex justify-content-around" }, [
-        _c(
-          "div",
-          [
-            _c(
-              "b-button",
-              {
-                directives: [
-                  {
-                    name: "b-modal",
-                    rawName: "v-b-modal.modal-prevent-closing",
-                    modifiers: { "modal-prevent-closing": true }
+      _c(
+        "div",
+        {
+          staticClass: "container-fluid d-flex justify-content-around",
+          staticStyle: { margin: "0" }
+        },
+        [
+          _c(
+            "div",
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticStyle: { "text-align": "center" } },
+                [
+                  _c(
+                    "b-button",
+                    {
+                      directives: [
+                        {
+                          name: "b-modal",
+                          rawName: "v-b-modal.modal-prevent-closing",
+                          modifiers: { "modal-prevent-closing": true }
+                        }
+                      ]
+                    },
+                    [_vm._v("ADD TASK")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.backlogs, function(backlog, i) {
+                return _c("Backlog", {
+                  key: i + 1,
+                  attrs: { backlog: backlog },
+                  on: {
+                    emitGetEdit: _vm.getEditPage,
+                    emitGoDelete: _vm.goDelete
                   }
-                ]
-              },
-              [_vm._v("ADD TASK")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._l(_vm.backlogs, function(backlog, i) {
-              return _c("Backlog", {
-                key: i + 1,
-                attrs: { backlog: backlog },
-                on: { emitGetEdit: _vm.getEditPage, emitGoDelete: _vm.goDelete }
+                })
               })
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          [
-            _vm._m(1),
-            _vm._v(" "),
-            _vm._l(_vm.doings, function(doing, i) {
-              return _c("Doing", {
-                key: i + 1,
-                attrs: { doing: doing },
-                on: { emitGetEdit: _vm.getEditPage, emitGoDelete: _vm.goDelete }
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticStyle: { "text-align": "center" } },
+                [
+                  _c(
+                    "b-button",
+                    {
+                      directives: [
+                        {
+                          name: "b-modal",
+                          rawName: "v-b-modal.modal-prevent-closing",
+                          modifiers: { "modal-prevent-closing": true }
+                        }
+                      ]
+                    },
+                    [_vm._v("ADD TASK")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.doings, function(doing, i) {
+                return _c("Doing", {
+                  key: i + 1,
+                  attrs: { doing: doing },
+                  on: {
+                    emitGetEdit: _vm.getEditPage,
+                    emitGoDelete: _vm.goDelete
+                  }
+                })
+              }),
+              _vm._v(" "),
+              _c("div")
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            [
+              _vm._m(2),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticStyle: { "text-align": "center" } },
+                [
+                  _c(
+                    "b-button",
+                    {
+                      directives: [
+                        {
+                          name: "b-modal",
+                          rawName: "v-b-modal.modal-prevent-closing",
+                          modifiers: { "modal-prevent-closing": true }
+                        }
+                      ]
+                    },
+                    [_vm._v("ADD TASK")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.todos, function(todo, i) {
+                return _c("Todo", {
+                  key: i + 1,
+                  attrs: { todo: todo },
+                  on: {
+                    emitGetEdit: _vm.getEditPage,
+                    emitGoDelete: _vm.goDelete
+                  }
+                })
               })
-            }),
-            _vm._v(" "),
-            _c("div")
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          [
-            _vm._m(2),
-            _vm._v(" "),
-            _vm._l(_vm.todos, function(todo, i) {
-              return _c("Todo", {
-                key: i + 1,
-                attrs: { todo: todo },
-                on: { emitGetEdit: _vm.getEditPage, emitGoDelete: _vm.goDelete }
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            [
+              _vm._m(3),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticStyle: { "text-align": "center" } },
+                [
+                  _c(
+                    "b-button",
+                    {
+                      directives: [
+                        {
+                          name: "b-modal",
+                          rawName: "v-b-modal.modal-prevent-closing",
+                          modifiers: { "modal-prevent-closing": true }
+                        }
+                      ]
+                    },
+                    [_vm._v("ADD TASK")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.dones, function(done, i) {
+                return _c("Done", {
+                  key: i + 1,
+                  attrs: { done: done },
+                  on: {
+                    emitGetEdit: _vm.getEditPage,
+                    emitGoDelete: _vm.goDelete
+                  }
+                })
               })
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          [
-            _vm._m(3),
-            _vm._v(" "),
-            _vm._l(_vm.dones, function(done, i) {
-              return _c("Done", {
-                key: i + 1,
-                attrs: { done: done },
-                on: { emitGetEdit: _vm.getEditPage, emitGoDelete: _vm.goDelete }
-              })
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c("div", [_c("Modal", { on: { emitCreatedTask: _vm.fetchTasks } })], 1)
-      ])
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            [_c("Modal", { on: { emitCreatedTask: _vm.fetchTasks } })],
+            1
+          )
+        ]
+      )
     ])
   ])
 }
@@ -64253,23 +64632,13 @@ render._withStripped = true
       
       }
     })();
-},{"axios":"node_modules/axios/index.js","../components/Backlog":"src/components/Backlog.vue","../components/Doing":"src/components/Doing.vue","../components/Done":"src/components/Done.vue","../components/Todo":"src/components/Todo.vue","../components/Modal":"src/components/Modal.vue","bootstrap-vue":"node_modules/bootstrap-vue/esm/index.js","_css_loader":"../../Users/ThinkPad X230/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/views/EditTask.vue":[function(require,module,exports) {
+},{"../API/BaseURL":"src/API/BaseURL.js","../components/Backlog":"src/components/Backlog.vue","../components/Doing":"src/components/Doing.vue","../components/Done":"src/components/Done.vue","../components/Todo":"src/components/Todo.vue","../components/Modal":"src/components/Modal.vue","bootstrap-vue":"node_modules/bootstrap-vue/esm/index.js","_css_loader":"../../Users/ThinkPad X230/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/views/EditTask.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -64340,6 +64709,11 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    {
+      staticClass:
+        "d-flex justify-content-center flex-direction:column align-items-center",
+      staticStyle: { height: "800px" }
+    },
     [
       _c(
         "b-form",
@@ -64405,32 +64779,6 @@ exports.default = _default;
                   expression: "editValue.dueDate"
                 }
               }),
-              _vm._v("\n        priority\n        "),
-              _c(
-                "b-form-select",
-                {
-                  staticClass: "form-select",
-                  attrs: { "aria-label": "Default select example" },
-                  model: {
-                    value: _vm.editValue.priority,
-                    callback: function($$v) {
-                      _vm.$set(_vm.editValue, "priority", $$v)
-                    },
-                    expression: "editValue.priority"
-                  }
-                },
-                [
-                  _c("option", { attrs: { selected: "" } }, [
-                    _vm._v("Open this select menu")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "medium" } }, [
-                    _vm._v("Medium")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "high" } }, [_vm._v("High")])
-                ]
-              ),
               _vm._v("\n        category\n        "),
               _c(
                 "b-form-select",
@@ -64528,10 +64876,26 @@ var _Home = _interopRequireDefault(require("./views/Home.vue"));
 
 var _EditTask = _interopRequireDefault(require("./views/EditTask.vue"));
 
-var _axios = _interopRequireDefault(require("axios"));
+var _BaseURL = _interopRequireDefault(require("./API/BaseURL"));
+
+var _Register = _interopRequireDefault(require("./views/Register"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -64547,13 +64911,20 @@ var _default = {
       message: "HALLO VUE",
       isLogin: false,
       changePage: false,
-      editValue: {}
+      editValue: {},
+      pageRegister: false,
+      registerValue: {
+        email: "adadada",
+        name: "",
+        password: null
+      }
     };
   },
   components: {
     Home: _Home.default,
     Login: _Login.default,
-    EditTask: _EditTask.default
+    EditTask: _EditTask.default,
+    Register: _Register.default
   },
   methods: {
     changeIsLogin: function changeIsLogin(val) {
@@ -64567,9 +64938,9 @@ var _default = {
       var _this = this;
 
       this.changePage = true;
-      (0, _axios.default)({
-        method: 'PUT',
-        url: "http://localhost:3000/tasks/".concat(this.editValue.id),
+      (0, _BaseURL.default)({
+        method: "PUT",
+        url: "/tasks/".concat(this.editValue.id),
         data: {
           title: this.editValue.title,
           description: this.editValue.description,
@@ -64582,11 +64953,44 @@ var _default = {
         }
       }).then(function (_ref) {
         var data = _ref.data;
-        console.log(data);
         _this.changePage = false;
       }).catch(function (err) {
         console.log(err);
       });
+    },
+    getRegisterPage: function getRegisterPage() {
+      this.pageRegister = true;
+      this.isLogin = true;
+    },
+    doRegister: function doRegister(val) {
+      var _this2 = this;
+
+      var email = val.email,
+          password = val.password,
+          name = val.name;
+      (0, _BaseURL.default)({
+        method: "POST",
+        url: "/register",
+        data: {
+          name: name,
+          email: email,
+          password: password
+        }
+      }).then(function (response) {
+        _this2.isLogin = false;
+        _this2.pageRegister = false;
+      }).catch(function (err) {
+        console.log(err);
+      });
+    },
+    doLogOut: function doLogOut() {
+      this.isLogin = false;
+      localStorage.access_token = "";
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log("User signed out.");
+      });
+      localStorage.clear();
     }
   },
   created: function created() {
@@ -64614,9 +65018,19 @@ exports.default = _default;
     "div",
     [
       !_vm.isLogin
-        ? _c("Login", { on: { emitHasToken: _vm.changeIsLogin } })
+        ? _c("Login", {
+            attrs: { registerValue: _vm.registerValue },
+            on: {
+              emitHasToken: _vm.changeIsLogin,
+              emitGetRegister: _vm.getRegisterPage
+            }
+          })
+        : _vm.pageRegister
+        ? _c("Register", { on: { emitDoRegister: _vm.doRegister } })
         : !_vm.changePage
-        ? _c("Home", { on: { emitChangePage: _vm.doChangePage } })
+        ? _c("Home", {
+            on: { emitChangePage: _vm.doChangePage, emitDoLogout: _vm.doLogOut }
+          })
         : _vm.editValue
         ? _c("EditTask", {
             attrs: { editValue: _vm.editValue },
@@ -64660,7 +65074,7 @@ render._withStripped = true
       
       }
     })();
-},{"./views/Login.vue":"src/views/Login.vue","./views/Home.vue":"src/views/Home.vue","./views/EditTask.vue":"src/views/EditTask.vue","axios":"node_modules/axios/index.js","_css_loader":"../../Users/ThinkPad X230/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"node_modules/bootstrap/dist/css/bootstrap.css":[function(require,module,exports) {
+},{"./views/Login.vue":"src/views/Login.vue","./views/Home.vue":"src/views/Home.vue","./views/EditTask.vue":"src/views/EditTask.vue","./API/BaseURL":"src/API/BaseURL.js","./views/Register":"src/views/Register.vue","_css_loader":"../../Users/ThinkPad X230/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"node_modules/bootstrap/dist/css/bootstrap.css":[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
@@ -64733,7 +65147,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61689" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52256" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
