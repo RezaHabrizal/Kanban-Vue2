@@ -61,7 +61,7 @@
 <script>
 import axios from "../API/BaseURL";
 export default {
-  props: ['done'],
+ 
   data() {
     return {
       title: "",

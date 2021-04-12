@@ -9,6 +9,15 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
+import GSignInButton from 'vue-google-signin-button'
+Vue.use(GSignInButton)
+
+import VueSweetalert2 from 'vue-sweetalert2';
+const options = {
+  confirmButtonColor: '#41b882',
+  cancelButtonColor: '#ff7674',
+};
+Vue.use(VueSweetalert2, options);
 
 new Vue({
   render: h => h(App),

@@ -1,31 +1,39 @@
 <template>
-  <div class="card" style="width: 18rem;">
+  <div id="cardd" class="card" style="width: 18rem;">
     <div class="card-body">
       <label for="">Title</label>
-      <h5 class="card-title">{{ todo.title }}</h5>
+      <h5 class="card-title">
+        {{ task.title }}
+        <div class="container d-flex flex-row-reverse" style="font-size: 12px;">
+          by: {{ task.user }}
+        </div>
+        <div class="container d-flex flex-row-reverse" style="font-size: 12px;">
+          created at: {{ task.createdAt }}
+        </div>
+      </h5>
       <label for="">Description</label>
       <h6 class="card-text">
-        {{ todo.description }}
+        {{ task.description }}
       </h6>
       <label for="">Due Date</label>
       <h6 class="card-text">
-        {{ todo.dueDate }}
+        {{ task.dueDate }}
       </h6>
-      <label for="">author</label>
+      <label for="">category</label>
       <h6 class="card-text">
-        {{ todo.User.name }}
+        {{ task.category }}
       </h6>
       <button
         type="button"
         class="btn btn-outline-info"
-        @click.prevent="goEdit(todo.id)"
+        @click.prevent="goEdit(task.id)"
       >
         Edit
       </button>
       <button
         type="button"
         class="btn btn-outline-danger"
-        @click.prevent="goDelete(todo.id)"
+        @click.prevent="goDelete(task.id)"
       >
         Delete
       </button>
@@ -35,7 +43,7 @@
 
 <script>
 export default {
-  props: ["todo"],
+  props: ["task"],
   methods: {
     goEdit(id) {
       this.$emit("emitGetEdit", id);
@@ -47,4 +55,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+</style>

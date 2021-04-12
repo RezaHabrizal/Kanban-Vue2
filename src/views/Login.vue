@@ -1,9 +1,18 @@
 <template>
   <section id="login-page">
-    <div class="container d-flex justify-content-center flex-column" style="height: 100vh;">
+    <div
+      class="container d-flex justify-content-center flex-column"
+      style="height: 100vh;"
+    >
       <div>
-        <form class="container justify-content-sm-center" style="width: 300px;" @submit.prevent="login">
-          <div class="container text-center"><h3 style="color: blue;">LOGIN</h3></div>
+        <form
+          class="container justify-content-sm-center"
+          style="width: 300px;"
+          @submit.prevent="login"
+        >
+          <div class="container text-center">
+            <h3 style="color: blue;">LOGIN</h3>
+          </div>
           <label for=""><h6 style="color: green;">Email</h6></label>
           <input type="email" v-model="email_login" class="form-control" />
           <label for=""><h6 style="color: green;">Password</h6></label>
@@ -21,20 +30,26 @@
           </div>
           <div class="row" style="padding-top: 1rem;">
             <div class="container d-flex">
-              <button @click.prevent="getRegisterPage" type="button" class="btn btn-success btn-lg btn-block">
+              <button
+                @click.prevent="getRegisterPage"
+                type="button"
+                class="btn btn-success btn-lg btn-block"
+              >
                 Register
               </button>
             </div>
           </div>
         </form>
-        <div class="container d-flex justify-content-sm-center" style="padding: 1rem">
+        <div
+          class="container d-flex justify-content-sm-center"
+          style="padding: 1rem;"
+        >
           <h6>
             sign with google
           </h6>
         </div>
         <div class="container d-flex justify-content-sm-center">
           <GoogleLogin
-            @click.prevent="login"
             :params="params"
             :renderParams="renderParams"
             :onSuccess="onSuccess"
@@ -48,16 +63,15 @@
 <script>
 import axios from "../API/BaseURL";
 import GoogleLogin from "vue-google-login";
-import Register from "./Register"
+import Register from "./Register";
 
 export default {
   components: {
     GoogleLogin,
-    Register
+    Register,
   },
   data() {
     return {
-      tex: "LOGIN",
       email_login: "",
       password_login: "",
       // client_id is the only required property but you can add several more params, full list down bellow on the Auth api section
@@ -71,7 +85,7 @@ export default {
         height: 50,
         longtitle: true,
       },
-      doRegister: false
+      doRegister: false,
     };
   },
   methods: {
@@ -89,7 +103,13 @@ export default {
           this.$emit("emitHasToken", true);
         })
         .catch((err) => {
-          console.log(err);
+          let splitedErr = err.message.split(" ");
+          let status = splitedErr[splitedErr.length - 1];
+          if (status === "404") {
+            this.$swal("Invalid email/password");
+          } else {
+            console.log(err);
+          }
         })
         .then(() => {
           (this.email_login = ""), (this.password_login = "");
@@ -113,9 +133,9 @@ export default {
       });
     },
     getRegisterPage() {
-      this.$emit('emitGetRegister')
-    }
-  }
+      this.$emit("emitGetRegister");
+    },
+  },
 };
 </script>
 

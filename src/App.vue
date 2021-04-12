@@ -17,6 +17,7 @@
       :editValue="editValue"
       @getEdit="getEdit"
     ></EditTask>
+    
   </div>
 </template>
 
@@ -37,7 +38,7 @@ export default {
       editValue: {},
       pageRegister: false,
       registerValue: {
-        email: "adadada",
+        email: "",
         name: "",
         password: null,
       },
@@ -95,9 +96,10 @@ export default {
           password,
         },
       })
-        .then((response) => {
+        .then(({data}) => {
           this.isLogin = false;
           this.pageRegister = false;
+          this.$swal(`${data.name} successfully registered`)
         })
         .catch((err) => {
           console.log(err);
