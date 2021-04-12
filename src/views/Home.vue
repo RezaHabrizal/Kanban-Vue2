@@ -25,18 +25,22 @@
           <div class="d-flex justify-content-center">
             <h3 style="padding: 1rem; color: green;">{{ board.name }}</h3>
           </div>
-          <div style="text-align: center; padding-bottom: 10px">
+          <div style="text-align: center;">
             <b-button v-b-modal.modal-prevent-closing>ADD TASK</b-button>
           </div>
-        <draggable v-model="board.tasks" @start="drag=true" @end="drag=true">
-          <Cards
-            v-for="(task, i) in board.tasks"
-            :key="i + 1"
-            :task="task"
-            @emitGetEdit="getEditPage"
-            @emitGoDelete="goDelete"
-          ></Cards>
-        </draggable>
+          <draggable
+            v-model="board.tasks"
+            @start="drag = true"
+            @end="drag = true"
+          >
+            <Cards
+              v-for="(task, i) in board.tasks"
+              :key="i + 1"
+              :task="task"
+              @emitGetEdit="getEditPage"
+              @emitGoDelete="goDelete"
+            ></Cards>
+          </draggable>
         </div>
         <!-- The modal -->
         <div>
@@ -52,14 +56,14 @@ import axios from "../API/BaseURL";
 import Modal from "../components/Modal";
 import { BModal, VBModal } from "bootstrap-vue";
 import Cards from "../components/Cards";
-import draggable from "vuedraggable"
+import draggable from "vuedraggable";
 
 export default {
   components: {
     Modal,
     BModal,
     Cards,
-    draggable
+    draggable,
   },
   directives: {
     "b-modal": VBModal,
@@ -85,6 +89,12 @@ export default {
         },
       })
         .then((response) => {
+          this.boards = [
+            { name: "backlog", tasks: [] },
+            { name: "doing", tasks: [] },
+            { name: "todo", tasks: [] },
+            { name: "done", tasks: [] },
+          ];
           response.data.tasks.forEach((e, i) => {
             e.dueDate = new Date(e.dueDate).toDateString();
             e.createdAt = new Date(e.createdAt).toDateString();
@@ -97,7 +107,7 @@ export default {
                   category: e.category,
                   dueDate: e.dueDate,
                   user: e.User.name,
-                  createdAt: e.createdAt
+                  createdAt: e.createdAt,
                 });
               }
             });
