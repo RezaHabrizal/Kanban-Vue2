@@ -1,6 +1,5 @@
 <template>
   <div class="d-flex justify-content-center flex-direction:column align-items-center" style="height: 600px;">
-    <div class="container text-center"><h3 style="color: blue;">LOGIN</h3></div>
     <b-form @submit.prevent="doRegister" @reset="onReset" v-if="show">
       <b-form-group
         id="input-group-1"

@@ -10758,7 +10758,6 @@ exports.default = void 0;
 //
 //
 //
-//
 var _default = {
   data: function data() {
     return {
@@ -10810,8 +10809,6 @@ exports.default = _default;
       staticStyle: { height: "600px" }
     },
     [
-      _vm._m(0),
-      _vm._v(" "),
       _vm.show
         ? _c(
             "b-form",
@@ -10930,16 +10927,7 @@ exports.default = _default;
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container text-center" }, [
-      _c("h3", { staticStyle: { color: "blue" } }, [_vm._v("LOGIN")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -70424,6 +70412,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
 var _default = {
   components: {
     Modal: _Modal.default,
@@ -70463,6 +70455,19 @@ var _default = {
           access_token: localStorage.access_token
         }
       }).then(function (response) {
+        _this.boards = [{
+          name: "backlog",
+          tasks: []
+        }, {
+          name: "doing",
+          tasks: []
+        }, {
+          name: "todo",
+          tasks: []
+        }, {
+          name: "done",
+          tasks: []
+        }];
         response.data.tasks.forEach(function (e, i) {
           e.dueDate = new Date(e.dueDate).toDateString();
           e.createdAt = new Date(e.createdAt).toDateString();
@@ -70617,12 +70622,7 @@ exports.default = _default;
                 _vm._v(" "),
                 _c(
                   "div",
-                  {
-                    staticStyle: {
-                      "text-align": "center",
-                      "padding-bottom": "10px"
-                    }
-                  },
+                  { staticStyle: { "text-align": "center" } },
                   [
                     _c(
                       "b-button",
@@ -74975,7 +74975,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60045" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64235" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
